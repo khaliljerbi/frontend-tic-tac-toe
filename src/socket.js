@@ -3,7 +3,9 @@ import VueSocketIO from "vue-socket.io";
 
 import store from "./store";
 
-const HOST = location.origin;
+const HOST = "https://socket-tictactoe.herokuapp.com";
+
+console.log;
 
 Vue.use(
   new VueSocketIO({
