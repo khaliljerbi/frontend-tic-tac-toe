@@ -3,7 +3,7 @@ import VueSocketIO from "vue-socket.io";
 
 import store from "./store";
 
-const HOST = "https://socket-tictactoe.herokuapp.com";
+const HOST = "https://floating-tundra-80413.herokuapp.com";
 
 console.log;
 
