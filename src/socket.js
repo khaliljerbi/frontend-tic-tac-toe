@@ -5,8 +5,6 @@ import store from "./store";
 
 const HOST = "https://floating-tundra-80413.herokuapp.com";
 
-console.log;
-
 Vue.use(
   new VueSocketIO({
     debug: process.env.NODE_ENV !== "production",

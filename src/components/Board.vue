@@ -61,6 +61,9 @@ export default {
         },
     }),
     computed: {
+        gamesPlayed() {
+            return this.score.x + this.score.o + this.score.d;
+        },
         winnigMessage() {
             return this.isWinner === "D" ?
                 "Draw !" :
@@ -128,8 +131,8 @@ export default {
     },
     sockets: {
         gameStarted(data) {
+            this.switchPlayer = null;
             this.isGameStarted = true;
-            this.xIsNext = data.xIsNext;
             this.xPlayer = data.xPlayer;
             this.oPlayer = data.oPlayer;
         },
@@ -143,7 +146,7 @@ export default {
         rematchAccepted() {
             this.rematch = false;
             this.squares = Array(9).fill(null);
-            this.xIsNext = true;
+            this.xIsNext = this.gamesPlayed % 2 === 0;
         },
     },
     watch: {
@@ -151,8 +154,8 @@ export default {
             if (this.isWinner) {
                 this.score = {
                     ...this.score,
-                    [this.checkForWinner.toLowerCase()]: ++this.score[
-                        this.checkForWinner.toLowerCase()
+                    [this.isWinner.toLowerCase()]: ++this.score[
+                        this.isWinner.toLowerCase()
                     ],
                 };
             }
