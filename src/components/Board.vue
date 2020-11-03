@@ -194,7 +194,7 @@ export default {
 
 @media only screen and (max-width: 600px) {
     .gameboard {
-        width: 350px;
+        width: 260px;
     }
 }
 </style>

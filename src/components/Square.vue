@@ -29,4 +29,10 @@ export default {
     justify-content: center;
     height: 150px;
 }
+
+@media only screen and (max-width: 600px) {
+    .square {
+        height: 110px;
+    }
+}
 </style>
