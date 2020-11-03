@@ -191,4 +191,10 @@ export default {
     flex-grow: 0.5;
     border: 2px solid #000;
 }
+
+@media only screen and (max-width: 600px) {
+    .gameboard {
+        width: 350px;
+    }
+}
 </style>
